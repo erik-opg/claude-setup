@@ -163,11 +163,9 @@ Use Task tool with these specialized agents:
 | `refactoring-expert` | Code cleanup, technical debt reduction |
 | `technical-writer` | Documentation, technical writing |
 
-### Technology Experts (experts/ folder)
+### Technology Experts
 | Agent | Use When |
 |-------|----------|
-| `bigquery-expert` | BigQuery cost optimization, query plans, partitioning |
-| `ga4-analyst` | GA4 + BigQuery analysis with auto-insights |
 | `sql-expert` | SQL optimization, BigQuery/Postgres patterns |
 | `typescript-expert` | TypeScript strict mode, generics, type safety |
 | `nextjs-expert` | Next.js App Router, Server Components, SSR/SSG |
