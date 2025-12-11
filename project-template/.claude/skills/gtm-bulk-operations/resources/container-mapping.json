@@ -1,0 +1,84 @@
+{
+  "account_id": "3505761902",
+  "account_name": "OPG Account",
+  "shops": [
+    {
+      "id": 9329147,
+      "country": "NL",
+      "name": "Kunststofplatenshop.nl",
+      "gtm_id": "GTM-5BFJP5G"
+    },
+    {
+      "id": 9329149,
+      "country": "DE",
+      "name": "Kunststoffplattenonline.de",
+      "gtm_id": "GTM-MX445N5"
+    },
+    {
+      "id": 9327633,
+      "country": "DE-HPL",
+      "name": "Hplplattenshop.de",
+      "gtm_id": "GTM-KSFGL3H"
+    },
+    {
+      "id": 9329155,
+      "country": "DE-PMMA",
+      "name": "Acrylglasplattenshop.de",
+      "gtm_id": "GTM-TGVXNLD"
+    },
+    {
+      "id": 9328073,
+      "country": "UK",
+      "name": "Plasticsheetsshop.co.uk",
+      "gtm_id": "GTM-WJWM255"
+    },
+    {
+      "id": 9327968,
+      "country": "BE",
+      "name": "Kunststofplaten.be",
+      "gtm_id": "GTM-WB7PFTB"
+    },
+    {
+      "id": 13259779,
+      "country": "BE-FR",
+      "name": "Plaqueplastique.be",
+      "gtm_id": "GTM-N2364FW"
+    },
+    {
+      "id": 13259999,
+      "country": "FR",
+      "name": "Plaqueplastique.fr",
+      "gtm_id": "GTM-MM5KQCF"
+    },
+    {
+      "id": 10375338,
+      "country": "FR-PMMA",
+      "name": "Plexiglasssurmesure.fr",
+      "gtm_id": "GTM-N7XKQ7L"
+    },
+    {
+      "id": 9328048,
+      "country": "AT",
+      "name": "Kunststoffplatten.at",
+      "gtm_id": "GTM-57VFD3Z"
+    },
+    {
+      "id": 57801577,
+      "country": "IT",
+      "name": "Pannelliplastica.it",
+      "gtm_id": "GTM-NKZ9QM7"
+    },
+    {
+      "id": 57802452,
+      "country": "ES",
+      "name": "Planchasdeplastico.es",
+      "gtm_id": "GTM-NBGPKB7"
+    },
+    {
+      "id": 99860573,
+      "country": "PL",
+      "name": "Plytyplastikowe.pl",
+      "gtm_id": "GTM-N5Q2VS5"
+    }
+  ]
+}

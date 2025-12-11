@@ -1,0 +1,14 @@
+# Internal Documentation
+
+Store codebase research findings here.
+
+## Purpose
+
+When you research the codebase (patterns, architecture, conventions),
+document findings here for future reference.
+
+## Example Files
+
+- `authentication-patterns.md` - How auth works in this codebase
+- `api-conventions.md` - API route patterns and standards
+- `database-schema.md` - Schema relationships and constraints

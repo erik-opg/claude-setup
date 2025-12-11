@@ -1,0 +1,99 @@
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+# Cancel in-progress runs on new push
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    # Only run on PRs from the same repository (not forks for security)
+    if: github.event.pull_request.head.repo.full_name == github.repository
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for better context
+
+      - name: Get changed files
+        id: changed
+        run: |
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Claude Code Review
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Review this pull request for:
+
+            ## Code Quality
+            - Clean code principles (readable, maintainable)
+            - TypeScript best practices (no `any`, proper types)
+            - Error handling completeness
+            - Code duplication
+
+            ## Security
+            - Input validation
+            - Authentication/authorization
+            - Sensitive data exposure
+            - SQL/NoSQL injection
+            - XSS vulnerabilities
+
+            ## Performance
+            - Unnecessary re-renders (React)
+            - Missing memoization
+            - N+1 queries
+            - Large bundle impact
+
+            ## Testing
+            - Test coverage for new code
+            - Edge cases covered
+            - Error cases tested
+
+            Changed files:
+            ${{ steps.changed.outputs.files }}
+
+            Provide feedback as:
+            1. **Critical** - Must fix before merge
+            2. **Suggestions** - Recommended improvements
+            3. **Nitpicks** - Minor style/preference (optional)
+
+            If no issues found, approve with a brief summary of what looks good.
+
+          # Restrict tools for security
+          allowed_tools: |
+            Read,
+            Grep,
+            Glob,
+            Bash(git diff:*),
+            Bash(git log:*),
+            Bash(gh pr view:*),
+            Bash(gh pr diff:*)
+
+          # Model selection
+          model: claude-sonnet-4-20250514
+
+          # Max tokens for response
+          max_tokens: 4096
+
+      - name: Post review comment
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // The claude-code-action handles posting comments
+            // This step is for any additional processing if needed
+            console.log('Code review completed');

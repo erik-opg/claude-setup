@@ -1,0 +1,17 @@
+# Sensitive files - NEVER commit these
+global-config/mcp.json
+*.secret
+*.key
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# Temporary files
+.docs/tmp/*
+!.docs/tmp/.gitkeep
+
+# Session-specific
+*.log

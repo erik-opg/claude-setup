@@ -1,0 +1,49 @@
+{
+  "mcpServers": {
+    "gomarble": {
+      "type": "http",
+      "url": "https://apps.gomarble.ai/mcp-api/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_GOMARBLE_TOKEN"
+      }
+    },
+    "gtm-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://gtm-mcp.stape.ai/mcp"
+      ]
+    },
+    "supabase-gtm-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-supabase@latest",
+        "--project-ref=YOUR_PROJECT_REF"
+      ],
+      "env": {
+        "SUPABASE_ACCESS_TOKEN": "YOUR_SUPABASE_TOKEN"
+      }
+    },
+    "bigquery": {
+      "command": "/path/to/toolbox",
+      "args": [
+        "--prebuilt",
+        "bigquery",
+        "--stdio"
+      ],
+      "env": {
+        "BIGQUERY_PROJECT": "your-gcp-project"
+      }
+    },
+    "mcp-clickhouse": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://your-clickhouse-mcp-endpoint/mcp"
+      ]
+    }
+  }
+}

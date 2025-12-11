@@ -1,0 +1,21 @@
+# Plans Directory
+
+Store persistent task plans here for multi-session work.
+
+## Structure
+
+```
+plans/
+├── feature-name/
+│   ├── requirements.md      # User requirements
+│   ├── parallel-plan.md     # Task breakdown
+│   └── shared.md            # Cross-task context
+└── quick-plans/
+    └── simple-task.md       # Lightweight plans
+```
+
+## Usage
+
+1. Create plan before starting complex work
+2. Reference via `@.docs/plans/feature/parallel-plan.md`
+3. Continue across sessions without context loss

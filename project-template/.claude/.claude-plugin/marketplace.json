@@ -1,0 +1,224 @@
+{
+  "name": "claude-code-workflows",
+  "version": "1.0.0",
+  "description": "Comprehensive Claude Code setup with specialized agents, skills, and orchestration workflows for analytics engineering, GTM operations, cloud deployments, and dashboard development.",
+  "owner": {
+    "name": "Erik",
+    "organization": "OPG"
+  },
+  "metadata": {
+    "created": "2025-12-11",
+    "updated": "2025-12-11",
+    "license": "MIT",
+    "repository": "https://github.com/erik/claude-setup"
+  },
+  "plugins": [
+    {
+      "name": "gtm-operations",
+      "source": "./plugins/gtm-operations",
+      "description": "GTM bulk operations across 13 OPG shop containers with Supabase-first optimization",
+      "version": "1.0.0",
+      "keywords": ["gtm", "tag-manager", "bulk", "publish", "containers", "variables", "tags", "triggers"],
+      "category": "analytics",
+      "agents": ["../agents/gtm-operations-specialist.md"],
+      "commands": ["../commands/gtm/bulk-publish.md"],
+      "skills": ["../skills/gtm-bulk-operations"]
+    },
+    {
+      "name": "cloud-deployment",
+      "source": "./plugins/cloud-deployment",
+      "description": "Safe Cloud Function deployment with mandatory checklists and approval gates",
+      "version": "1.0.0",
+      "keywords": ["deploy", "cloud-function", "gcloud", "scheduler", "production", "rollback"],
+      "category": "devops",
+      "agents": ["../agents/cloud-functions-deployer.md"],
+      "commands": ["../commands/deploy/cloud-function.md"],
+      "skills": ["../skills/deployment-safety"]
+    },
+    {
+      "name": "purchase-analytics",
+      "source": "./plugins/purchase-analytics",
+      "description": "Multi-shop purchase monitoring with anomaly detection and false alarm reduction",
+      "version": "1.0.0",
+      "keywords": ["purchase", "revenue", "anomaly", "monitoring", "alerts", "baseline", "z-score"],
+      "category": "analytics",
+      "agents": ["../agents/purchase-logger-analyst.md"],
+      "commands": [],
+      "skills": []
+    },
+    {
+      "name": "precomputation",
+      "source": "./plugins/precomputation",
+      "description": "High-performance caching and precomputation for analytics pipelines",
+      "version": "1.0.0",
+      "keywords": ["precompute", "cache", "gcs", "bigquery", "optimization", "speedup"],
+      "category": "performance",
+      "agents": ["../agents/precompute-pipeline-specialist.md"],
+      "commands": [],
+      "skills": []
+    },
+    {
+      "name": "dashboard-development",
+      "source": "./plugins/dashboard-development",
+      "description": "Dashboard visualization, React performance, and real-time data for opg-dashboarding",
+      "version": "1.0.0",
+      "keywords": ["dashboard", "chart", "recharts", "visualization", "react", "performance", "real-time"],
+      "category": "frontend",
+      "agents": [
+        "../agents/dashboard-viz-specialist.md",
+        "../agents/react-performance-specialist.md",
+        "../agents/realtime-data-specialist.md"
+      ],
+      "commands": [],
+      "skills": ["../skills/ui-scaffolding"]
+    },
+    {
+      "name": "api-development",
+      "source": "./plugins/api-development",
+      "description": "Next.js API route development with validation, security, and testing",
+      "version": "1.0.0",
+      "keywords": ["api", "nextjs", "endpoint", "validation", "security", "testing"],
+      "category": "backend",
+      "agents": ["../agents/backend-architect.md"],
+      "commands": [
+        "../commands/api/api-new.md",
+        "../commands/api/api-protect.md",
+        "../commands/api/api-test.md"
+      ],
+      "skills": ["../skills/api-development"]
+    },
+    {
+      "name": "supabase-development",
+      "source": "./plugins/supabase-development",
+      "description": "Supabase Edge Functions, type generation, and database queries",
+      "version": "1.0.0",
+      "keywords": ["supabase", "edge-function", "database", "types", "realtime"],
+      "category": "backend",
+      "agents": [],
+      "commands": [
+        "../commands/supabase/edge-function-new.md",
+        "../commands/supabase/types-gen.md"
+      ],
+      "skills": ["../skills/supabase-development", "../skills/supabase-gtm-queries"]
+    },
+    {
+      "name": "deep-research",
+      "source": "./plugins/deep-research",
+      "description": "Comprehensive research with adaptive strategies and intelligent exploration",
+      "version": "1.0.0",
+      "keywords": ["research", "investigate", "analyze", "synthesis", "evidence"],
+      "category": "analysis",
+      "agents": ["../agents/deep-research-agent.md"],
+      "commands": [],
+      "skills": ["../skills/deep-research"]
+    },
+    {
+      "name": "google-ads",
+      "source": "./plugins/google-ads",
+      "description": "Google Ads GAQL queries and campaign analysis",
+      "version": "1.0.0",
+      "keywords": ["google-ads", "gaql", "campaign", "adgroup", "keywords", "revenue"],
+      "category": "analytics",
+      "agents": [],
+      "commands": [],
+      "skills": ["../skills/google-ads-gaql"]
+    },
+    {
+      "name": "ui-development",
+      "source": "./plugins/ui-development",
+      "description": "React component scaffolding with TypeScript and modern best practices",
+      "version": "1.0.0",
+      "keywords": ["react", "component", "page", "nextjs", "typescript", "ui"],
+      "category": "frontend",
+      "agents": ["../agents/frontend-architect.md"],
+      "commands": [
+        "../commands/ui/component-new.md",
+        "../commands/ui/page-new.md"
+      ],
+      "skills": ["../skills/ui-scaffolding"]
+    },
+    {
+      "name": "orchestration",
+      "source": "./plugins/orchestration",
+      "description": "Multi-agent coordination with context management and project supervision",
+      "version": "1.0.0",
+      "keywords": ["orchestration", "context", "supervisor", "coordination", "multi-agent"],
+      "category": "meta",
+      "agents": [
+        "../agents/context-manager.md",
+        "../agents/project-supervisor.md",
+        "../agents/query-clarifier.md"
+      ],
+      "commands": [],
+      "skills": []
+    },
+    {
+      "name": "technology-experts",
+      "source": "./plugins/technology-experts",
+      "description": "Framework-specific experts for Next.js, TypeScript, Node.js, SQL, and Docker",
+      "version": "1.0.0",
+      "keywords": ["nextjs", "typescript", "nodejs", "sql", "docker", "expert"],
+      "category": "development",
+      "agents": [
+        "../agents/experts/nextjs-expert.md",
+        "../agents/experts/typescript-expert.md",
+        "../agents/experts/nodejs-expert.md",
+        "../agents/experts/sql-expert.md",
+        "../agents/experts/docker-expert.md"
+      ],
+      "commands": [],
+      "skills": []
+    }
+  ],
+  "agentModelTiers": {
+    "opus": {
+      "description": "Critical decisions, complex reasoning, security-sensitive tasks",
+      "agents": [
+        "purchase-logger-analyst",
+        "security-engineer",
+        "system-architect"
+      ]
+    },
+    "sonnet": {
+      "description": "Complex development, analysis, multi-step workflows",
+      "agents": [
+        "gtm-operations-specialist",
+        "cloud-functions-deployer",
+        "dashboard-viz-specialist",
+        "react-performance-specialist",
+        "realtime-data-specialist",
+        "precompute-pipeline-specialist",
+        "backend-architect",
+        "frontend-architect",
+        "deep-research-agent",
+        "context-manager",
+        "project-supervisor",
+        "nextjs-expert",
+        "typescript-expert",
+        "nodejs-expert",
+        "sql-expert",
+        "docker-expert"
+      ]
+    },
+    "haiku": {
+      "description": "Fast operations, simple queries, deterministic tasks",
+      "agents": [
+        "query-clarifier"
+      ]
+    }
+  },
+  "globalConfig": {
+    "rules": {
+      "deployment": "NEVER deploy without user approval (Rule #0)",
+      "gtmSearch": "Always start from page 1 when searching GTM (Rule #1)",
+      "tokenEfficiency": "Query Supabase first before GTM API (Rule #2)",
+      "sessionDocs": "Create SESSION_LOG when approaching token limits (Rule #3)",
+      "planBased": "Use plans for complex multi-session work (Rule #4)",
+      "parallelExecution": "Batch independent operations in single message (Rule #5)"
+    },
+    "defaults": {
+      "gtmAccountId": "3505761902",
+      "shopContainerIds": [9329147, 9329149, 9327633, 9329155, 9328073, 9327968, 13259779, 13259999, 10375338, 9328048, 57801577, 57802452, 99860573]
+    }
+  }
+}
